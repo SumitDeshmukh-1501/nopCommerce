@@ -1,0 +1,17 @@
+{
+  "note": "Use environment variables for real secrets. This file contains example placeholders only and should not contain production credentials.",
+  "valid_admin": {
+    "email_env": "ADMIN_EMAIL",
+    "password_env": "ADMIN_PASSWORD",
+    "example_email": "admin@example.com",
+    "example_password": "SuperSecret"
+  },
+  "invalid": {
+    "wrong_password": "wrongpass123",
+    "unregistered_email": "not.exists@example.com"
+  },
+  "security_payloads": {
+    "sql_injection": ["' OR '1'='1", "'; DROP TABLE users; --", "' OR 1=1 --"],
+    "xss": ["<script>alert('xss')</script>", "\"\'><img src=x onerror=alert(1)>"]
+  }
+}
