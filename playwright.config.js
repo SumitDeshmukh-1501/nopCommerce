@@ -13,6 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  timeout: 30 * 1000,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -34,12 +35,20 @@ export default defineConfig({
   },
 
   /* Configure projects for major browsers */
+
   projects: [
-    
+    {
+      name : 'setup',
+      testMatch: /.*\.setup\.js/
+    },
 
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],
+            storageState: '.auth/loginedUser.json'
+       },
+      dependencies:['setup'],
+      testIgnore:'**/tests/authentication/**'
     },
 
     // {

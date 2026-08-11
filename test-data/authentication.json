@@ -1,17 +1,41 @@
 {
-  "note": "Use environment variables for real secrets. This file contains example placeholders only and should not contain production credentials.",
-  "valid_admin": {
-    "email_env": "ADMIN_EMAIL",
-    "password_env": "ADMIN_PASSWORD",
-    "example_email": "admin@example.com",
-    "example_password": "SuperSecret"
+  "TS001": {
+    "description": "TS001 Valid login with correct credentials",
+    "email": "admin@yourstore.com",
+    "password": "admin",
+    "errorMessage": "NULL"
   },
-  "invalid": {
-    "wrong_password": "wrongpass123",
-    "unregistered_email": "not.exists@example.com"
+
+  "TS002": {
+    "description": "TS002 Invalid password rejected",
+    "email": "admin@yourstore.com",
+    "password": "admin111",
+    "errorMessage":"The credentials provided are incorrect"
   },
-  "security_payloads": {
-    "sql_injection": ["' OR '1'='1", "'; DROP TABLE users; --", "' OR 1=1 --"],
-    "xss": ["<script>alert('xss')</script>", "\"\'><img src=x onerror=alert(1)>"]
+  "TS003": {
+    "description": "TS003 Invalid email rejected",
+    "email": "not.exists@example.com",
+    "password": "admin",
+    "errorMessage":"Please enter a valid email address."
+  
+  },
+  "TS004": {
+    "description": "TS004 Empty email rejected",
+    "email": "",
+    "password": "admin",
+    "errorMessage":"Please enter your email"
+  },      
+  "TS005": {
+    "description": "TS005 Empty password rejected",
+    "email": "admin@yourstore.com", 
+    "password": "",
+    "errorMessage":"The credentials provided are incorrect"
+  },
+
+  "TS006": {
+    "description": "TS006 Empty email and password rejected",
+    "email": "",
+    "password": "",
+    "errorMessage":"Please enter your email"
   }
 }
