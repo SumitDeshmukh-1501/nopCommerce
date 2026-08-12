@@ -63,6 +63,10 @@ export class DashboardPage {
     this.dashboardCAtionMinimiseButton = ""
 
 
+
+    this.catlogMenu ="ul[data-widget='treeview']> li:nth-child(2)"
+    this.catlog_products ="a[href='/Admin/Product/List']";
+
   }
 
   async goto() {
@@ -238,5 +242,10 @@ export class DashboardPage {
     // @ts-ignore
     const sortedList = listName.toSorted((a, b) => b.localeCompare(a));
     return sortedList;
+  }
+
+  async gotoTheProducts(){
+    await this.page.locator(this.catlogMenu).click();
+    await this.page.locator(this.catlog_products).click();
   }
 }
