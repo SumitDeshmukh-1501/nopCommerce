@@ -1,0 +1,14 @@
+{
+    "dashboardTitle" : "Dashboard",
+    "searchItem" : "customer",
+    "loginURLcontain" : "login",
+    "nopCommerceNewTitle" : " NopCommerce News",
+    "commonStatisticsTitle" : " Common statistics",
+    "newsCount" : 3,
+    "ststisticsCount" : 4,
+    "ordersCount" : "5",
+    "customerCount": "6"
+
+
+
+}
